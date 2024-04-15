@@ -1,0 +1,32 @@
+<div class="w-full">
+  <div class="bg-white rounded-lg shadow-md p-6 m-8">
+    <h3 class="text-lg font-bold mb-4">Listado</h3>
+    <ul class="divide-y divide-gray-300">
+      <li *ngFor="let character of characterList;
+      index as i;
+      let isFirst = first;
+      let isLast = last;
+      let isEven = even;
+      let isOdd = odd"
+      class=" rounded-lg py-4 flex justify-between items-center"
+      [ngClass]="{'bg-green-200':isLast,
+                  'bg-blue-300':isFirst }">
+        <div class="flex justify-between items-center">
+          <span class="text-lg">{{ i + 1 }}. {{ character.name }}</span>
+          <span class="text-gray-600">Power: {{ character.power }}</span>
+        </div>
+        <!-- <div>
+          <span>Es el primero: {{ isFirst }}</span>
+          <span>Es el último: {{ isLast }}</span>
+          <span>Es par: {{ isEven }}</span>
+          <span>Es impar: {{ isOdd }}</span>
+        </div> -->
+        <button class="px-4 py-2 bg-red-500/80 text-white rounded hover:bg-red-900"
+        (click)="emitDeleteId(character.id)"
+        >
+          X
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>

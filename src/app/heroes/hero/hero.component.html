@@ -1,0 +1,35 @@
+<div class="flex flex-col">
+  <h1 class="text-3xl font-bold">Spiderman</h1>
+
+  <dl>
+    <div class="flex">
+      <dt class="mr-2 font-bold">Nombre:</dt>
+      <dd>{{name}}</dd>
+    </div>
+
+    <div class="flex">
+      <dt class="mr-2 font-bold">Edad:</dt>
+      <dd>{{age}}</dd>
+    </div>
+
+    <div class="flex">
+      <dt class="mr-2 font-bold">Método:</dt>
+      <dd>{{getHeroDescripcion()}}</dd>
+    </div>
+
+    <div class="flex">
+      <dt class="mr-2 font-bold">Capitalizados:</dt>
+      <dd>{{capitalizedName}}</dd>
+    </div>
+  </dl>
+
+  <div class="flex">
+    <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 mt-3"
+    *ngIf="name==='Ironman'"
+    (click)="changeName()">Cambiar nombre</button>
+    <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 mt-3 ml-4"
+    *ngIf="age===40"
+    (click)="changeAge()">Cambiar edad</button>
+    <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 mt-3 ml-4" (click)="resetForm()">Reset</button>
+  </div>
+</div>
